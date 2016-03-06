@@ -1,7 +1,7 @@
 #!/bin/zsh
 clear
 
-# 2015 - Licensed under GPL, any version
+# 2015-2016 - Licensed under GPL, any version
 
 # How to install
 #
@@ -9,10 +9,10 @@ clear
 # 2. Create a directory called ~/.mylog (mkdir ~/.mylog)
 # 3. Create a file called changelog (touch ~.mylog/mylog)
 # 4. Create symlinks for the other functions
-# 4.1. ln -s ~/bin/mylog ~/bin/myview
-# 4.2. ln -s ~/bin/mylog ~/bin/mysearch
+#   4.1. ln -s ~/bin/mylog ~/bin/myview
+#   4.2. ln -s ~/bin/mylog ~/bin/mysearch
 # 5. Protect your log
-# 5.1. chmod 740 ~/.mylog
+#   5.1. chmod 740 ~/.mylog
 
 # Changelog
 # 0.1 - Initial version
@@ -25,8 +25,8 @@ clear
 #     - Added -h option to show help text
 # 0.55 - Added more colored
 #      - Cleaned up a little bit
-# 0.6 - Added a complete setup system
-#     - Removed some clutter
+# 0.6 - Removed some clutter
+#     - Clean up the code and made it better
 #
 
 # This is the location of your log-file.
@@ -56,11 +56,11 @@ DATE=$( date "+%F %T" )
 if [[ ${1} == "-h" ]]; then
 	echo "\033[1;34mThis is a small logging script for one line notes that you'd like to keep for future reference."
 	echo "It's nothing fancy, but it does the job for me.$END"
-	echo "$0:t v$VERSION"
+	echo "${0:t} v${VERSION}"
 	echo "Usage:"
-	echo "\t\033[0;34m$0:t <Enter>"
-	echo "\t$0:t -v (or myview) - View the changelog"
-	echo "\t$0:t -s (or mysearch) - Search, case insensitive$END"
+	echo "\t\033[0;34m${0:t} <Enter>"
+	echo "\t${0:t} -v (or myview) - View the changelog"
+	echo "\t${0:t} -s (or mysearch) - Search, case insensitive$END"
 	echo "\n\033[1;33mScripted by Stig-Ørjan Smelror <smelror@gmail.com>$END"
 	exit
 fi
@@ -82,7 +82,6 @@ echo "Your log entry:"
 read LOG
 echo "How do you want to tag this entry?"
 read TAG
-#TAG=`echo ${TAG} | tr '[:lower:]' '[:upper:]'`
 
 echo ${DATE} "* ${TAG:u} * ${LOG}" >> ${CHANGELOG}
 
