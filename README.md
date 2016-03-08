@@ -28,9 +28,11 @@
 0.55 - Added more colored
      - Cleaned up a little bit
 0.6 - Cleaned up the code and added better formatting
+0.6.1 - Added a bit of formatting to the input questions
+      - Changed the CHANGELOG variable to MYLOG
 ```
 
-**Plans for the future**
+**Plans or hopes for the future**
 
 I'd like to extend the script so that it'll work in a department.
 Thinking that it'll log based on the current user and with a global log-file,

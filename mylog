@@ -14,23 +14,8 @@ clear
 # 5. Protect your log
 #   5.1. chmod 740 ~/.mylog
 
-# Changelog
-# 0.1 - Initial version
-# 0.2 - Bugfixes
-# 0.3 - Added colored output
-#     - Change name from changelog to mylog
-#     - Added a howto to install and setup
-# 0.4 - Added a TAG to make searching for similar entries easier
-# 0.5 - Interactive instead of inline logging.
-#     - Added -h option to show help text
-# 0.55 - Added more colored
-#      - Cleaned up a little bit
-# 0.6 - Removed some clutter
-#     - Clean up the code and made it better
-#
-
 # This is the location of your log-file.
-CHANGELOG=~/.mylog/mylog
+MYLOG=~/.mylog/mylog
 
 # Here you set the colors you want in the output of view and search
 # 
@@ -44,13 +29,14 @@ CHANGELOG=~/.mylog/mylog
 # Light Gray  0;37     White         1;37
 ONE="\033[1;32m"
 TWO="\033[1;33m"
+W="\033[1;37m"
 END="\033[0m"
 #
 #
 
 # You don't have to edit anything beyond this line.
 #
-VERSION="0.6"
+VERSION="0.6.1"
 DATE=$( date "+%F %T" )
 
 if [[ ${1} == "-h" ]]; then
@@ -65,7 +51,7 @@ if [[ ${1} == "-h" ]]; then
 	exit
 fi
 if [[ ${1} == "-v" || ${0:t} == "myview" ]]; then
-	cat ${CHANGELOG} | awk -F'*' '{print "\033[1;37m"$1"-\033[0m""\033[1;32m"$2"-""\033[0m", "\033[1;33m"$3"\033[0m"}'
+	cat ${MYLOG} | awk -F'*' '{print "\033[1;37m"$1"-\033[0m""\033[1;32m"$2"-""\033[0m", "\033[1;33m"$3"\033[0m"}'
 	exit
 fi
 if [[ ${1} == "-s" || ${0:t} == "mysearch" ]]; then
@@ -74,16 +60,16 @@ if [[ ${1} == "-s" || ${0:t} == "mysearch" ]]; then
 	else
 		S=${2}
 	fi
-	grep -i ${S} ${CHANGELOG} | awk -F'*' '{print "\033[0;31m"${1}"-\033[0m""\033[1;32m"${2}"-""\033[0m", "\033[1;33m"${3}"\033[0m"}'
+	grep -i ${S} ${MYLOG} | awk -F'*' '{print "\033[0;31m"${1}"-\033[0m""\033[1;32m"${2}"-""\033[0m", "\033[1;33m"${3}"\033[0m"}'
 	exit
 fi
 
-echo "Your log entry:"
+echo "${W}Your log entry:${END}"
 read LOG
-echo "How do you want to tag this entry?"
+echo "${W}How do you want to tag this entry?${END}"
 read TAG
 
-echo ${DATE} "* ${TAG:u} * ${LOG}" >> ${CHANGELOG}
+echo ${DATE} "* ${TAG:u} * ${LOG}" >> ${MYLOG}
 
 clear
 echo "\n${ONE}* Entry added to your changelog *${END}"
