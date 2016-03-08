@@ -16,17 +16,17 @@
 
 **Changelog**
 
-0.1 - Initial version
-0.2 - Bugfixes
-0.3 - Added colored output
-    - Change name from changelog to mylog
-    - Added a howto to install and setup
-0.4 - Added a TAG to make searching for similar entries easier
-0.5 - Interactive instead of inline logging.
-    - Added -h option to show help text
-0.55 - Added more colored
-     - Cleaned up a little bit
-0.6 - Cleaned up the code and added better formatting
+## 0.1 - Initial version
+## 0.2 - Bugfixes
+## 0.3 - Added colored output
+##     - Change name from changelog to mylog
+##     - Added a howto to install and setup
+## 0.4 - Added a TAG to make searching for similar entries easier
+## 0.5 - Interactive instead of inline logging.
+##     - Added -h option to show help text
+## 0.55 - Added more colored
+##      - Cleaned up a little bit
+## 0.6 - Cleaned up the code and added better formatting
 
 
 **Plans for the future**
