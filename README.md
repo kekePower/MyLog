@@ -2,6 +2,12 @@
 
 2015-2016 - Licensed under GPL, any version
 
+MyLog is a script written for the ZSH shell that I use to log one-liners about what I do in my life.
+It's just for fun, but this script can also be used to keep track of changes you've made to your
+system or events that you want to have on record.
+
+It's really simple, but it works.
+
 **How to install**
 
 1. Download script and place it in your path. I use ~/bin/
