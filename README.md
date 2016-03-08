@@ -1,4 +1,4 @@
-# MyLog
+## MyLog
 
 2015-2016 - Licensed under GPL, any version
 
@@ -8,10 +8,10 @@
 2. Create a directory called ~/.mylog (mkdir ~/.mylog)
 3. Create a file called mylog (touch ~.mylog/mylog)
 4. Create symlinks for the other functions
-4.1. ln -s ~/bin/mylog ~/bin/myview
-4.2. ln -s ~/bin/mylog ~/bin/mysearch
+  1. ln -s ~/bin/mylog ~/bin/myview
+  2. ln -s ~/bin/mylog ~/bin/mysearch
 5. Protect your log
-5.1. chmod 740 ~/.mylog
+  1. chmod 740 ~/.mylog
 
 
 **Changelog**
