@@ -43,6 +43,6 @@ Let me know what you'd like to see this script do and I'll try.
 
 **Screenshots**
 
-[MyLog Screenshot 1](https://dl.dropboxusercontent.com/u/15356427/mylog1.png)
-[MyLog Screenshot 2](https://dl.dropboxusercontent.com/u/15356427/mylog2.png)
-[MyLog Screenshot 3](https://dl.dropboxusercontent.com/u/15356427/mylog3.png)
+![MyLog Screenshot 1](https://dl.dropboxusercontent.com/u/15356427/mylog1.png)
+![MyLog Screenshot 2](https://dl.dropboxusercontent.com/u/15356427/mylog2.png)
+![MyLog Screenshot 3](https://dl.dropboxusercontent.com/u/15356427/mylog3.png)
