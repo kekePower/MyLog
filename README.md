@@ -40,3 +40,9 @@ Perhaps create a way to create reports that will be emailed to a set of defined 
 The report will be based on dates or a user and can be run as a cron-job.
 
 Let me know what you'd like to see this script do and I'll try.
+
+**Screenshots**
+
+[MyLog Screenshot 1](https://dl.dropboxusercontent.com/u/15356427/mylog1.png)
+[MyLog Screenshot 2](https://dl.dropboxusercontent.com/u/15356427/mylog2.png)
+[MyLog Screenshot 3](https://dl.dropboxusercontent.com/u/15356427/mylog3.png)
