@@ -2,7 +2,8 @@
 
 2015-2016 - Licensed under GPL, any version
 
-*How to install*
+**How to install**
+
 1. Download script and place it in your path. I use ~/bin/
 2. Create a directory called ~/.mylog (mkdir ~/.mylog)
 3. Create a file called mylog (touch ~.mylog/mylog)
@@ -13,7 +14,8 @@
 5.1. chmod 740 ~/.mylog
 
 
-*Changelog*
+**Changelog**
+
 0.1 - Initial version
 0.2 - Bugfixes
 0.3 - Added colored output
@@ -27,7 +29,7 @@
 0.6 - Cleaned up the code and added better formatting
 
 
-*Plans for the future*
+**Plans for the future**
 
 I'd like to extend the script so that it'll work in a department.
 Thinking that it'll log based on the current user and with a global log-file,
