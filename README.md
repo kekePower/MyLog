@@ -11,6 +11,7 @@ It's really simple, but it works.
 **How to install**
 
 You will have to edit the Makefile and then run **make install**.
+
 When a new version is released, you can run **make update** to just install **mylog**.
 
 Or, you can do it manually as described below.
@@ -22,7 +23,7 @@ Or, you can do it manually as described below.
   1. ln -s ~/bin/mylog ~/bin/myview
   2. ln -s ~/bin/mylog ~/bin/mysearch
 5. Protect your log
-  1. chmod 740 ~/.mylog
+  1. chmod 640 ~/.mylog
 
 
 **Changelog**
