@@ -35,8 +35,8 @@ if [[ ${1} == "-h" ]]; then
 	echo "Usage:"
 	echo "\t\033[0;34m${0:t} <Enter>"
 	echo "\t${0:t} -v (or myview) - View the changelog"
-	echo "\t${0:t} -s (or mysearch) - Search, case insensitive$END"
-    echo "\t${0:t} -tags - This will show a list of tags you've used sorted alphabetically"
+	echo "\t${0:t} -s (or mysearch) - Search, case insensitive"
+    echo "\t${0:t} -tags - This will show a list of tags you've used sorted alphabetically${END}"
 	echo "\n\033[1;33mScripted by Stig-Ørjan Smelror <smelror@gmail.com>$END"
 	exit
 fi

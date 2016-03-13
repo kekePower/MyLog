@@ -44,6 +44,7 @@ Or, you can do it manually as described below.
       - Changed the CHANGELOG variable to MYLOG
 0.6.2 - Added a -tag option to show the tags used, sorted alphabetically
       - Made a simple Makefile to install and update the script
+      - Removed the Install instructions from the mylog file
 ```
 
 **Plans or hopes for the future**

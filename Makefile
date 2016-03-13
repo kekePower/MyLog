@@ -7,7 +7,9 @@ LOGFILE = $(LOGDIR)/mylog
 
 install:
 	@-printf 'Installing MyLog to $(PREFIX)'
-	@-install -c mylog $(PREFIX)
+	@-cat mylog | grep ^MYLOG | sed -e '1,/MYLOG/s/MYLOG/MYLOG\=$(LOGFILE:q)\ \#\ /' > /tmp/mylog
+	@-install -c /tmp/mylog $(PREFIX)
+	@-rm -f /tmp/mylog
 	@-printf 'Creating the symlinks\n'
 	@-ln -sf $(PREFIX)/mylog $(PREFIX)/myview
 	@-ln -sf $(PREFIX)/mylog $(PREFIX)/mysearch
@@ -21,5 +23,7 @@ install:
 
 update:
 	@-printf 'Updating MyLog to $(PREFIX)\n'
-	@-install -c mylog $(PREFIX)
+	@-cat mylog | grep ^MYLOG | sed -e '1,/MYLOG/s/MYLOG/MYLOG\=$(LOGFILE:q)\ \#\ /' > /tmp/mylog
+	@-install -c /tmp/mylog $(PREFIX)
+	@-rm -f /tmp/mylog
 	@-exit 0
