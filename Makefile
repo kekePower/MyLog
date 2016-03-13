@@ -1,18 +1,20 @@
 # Simple install file for MyLog
 #
 
+NAME    = mylog
 PREFIX  = ~/bin
-LOGDIR  = ~/.mylog
-LOGFILE = $(LOGDIR)/mylog
+INSTALL = $(PREFIX)/$(NAME)
+LOGDIR  = ~/.$(NAME)
+LOGFILE = $(LOGDIR)/$(NAME)
 
 install:
-	@-printf 'Installing MyLog to $(PREFIX)'
+	@-printf 'Installing MyLog as $(INSTALL)'
 	@-cat mylog | grep ^MYLOG | sed -e '1,/MYLOG/s/MYLOG/MYLOG\=$(LOGFILE:q)\ \#\ /' > /tmp/mylog
-	@-install -c /tmp/mylog $(PREFIX)
+	@-install -c /tmp/mylog $(INSTALL)
 	@-rm -f /tmp/mylog
 	@-printf 'Creating the symlinks\n'
-	@-ln -sf $(PREFIX)/mylog $(PREFIX)/myview
-	@-ln -sf $(PREFIX)/mylog $(PREFIX)/mysearch
+	@-ln -sf $(INSTALL) $(PREFIX)/myview
+	@-ln -sf $(INSTALL)/mylog $(PREFIX)/mysearch
 	@-printf 'Creating the logdir and logfile'
 	@-mkdir $(LOGDIR)
 	@-touch $(LOGFILE)
@@ -22,8 +24,8 @@ install:
 
 
 update:
-	@-printf 'Updating MyLog to $(PREFIX)\n'
+	@-printf 'Updating MyLog as $(INSTALL)\n'
 	@-cat mylog | grep ^MYLOG | sed -e '1,/MYLOG/s/MYLOG/MYLOG\=$(LOGFILE:q)\ \#\ /' > /tmp/mylog
-	@-install -c /tmp/mylog $(PREFIX)
+	@-install -c /tmp/mylog $(INSTALL)
 	@-rm -f /tmp/mylog
 	@-exit 0
