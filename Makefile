@@ -4,7 +4,7 @@
 NAME    = mylog
 PREFIX  = ~/bin
 INSTALL = $(PREFIX)/$(NAME)
-LOGDIR  = ~/.$(NAME)
+LOGDIR  = ~/.config/$(NAME)
 LOGFILE = $(LOGDIR)/$(NAME)
 
 install:
