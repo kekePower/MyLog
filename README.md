@@ -45,6 +45,8 @@ Or, you can do it manually as described below.
 0.6.2 - Added a -tag option to show the tags used, sorted alphabetically
       - Made a simple Makefile to install and update the script
       - Removed the Install instructions from the mylog file
+0.7.0 - Moved the logfile to ~/.config/mylog/mylog
+      - Fixed a hardcoded setting
 ```
 
 **Plans or hopes for the future**

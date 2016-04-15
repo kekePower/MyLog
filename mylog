@@ -4,7 +4,7 @@ clear
 # 2015-2016 - Licensed under GPL, any version
 
 # This is the location of your log-file.
-MYLOG=~/.mylog/mylog
+MYLOG=~/.config/mylog/mylog
 
 # Here you set the colors you want in the output of view and search
 # 
@@ -25,7 +25,7 @@ END="\033[0m"
 
 # You don't have to edit anything beyond this line.
 #
-VERSION="0.6.2"
+VERSION="0.7.0"
 DATE=$( date "+%F %T" )
 
 if [[ ${1} == "-h" ]]; then
@@ -54,8 +54,8 @@ if [[ ${1} == "-s" || ${0:t} == "mysearch" ]]; then
 	exit
 fi
 if [[ ${1} == "-tags" ]]; then
-    if [[ $(cat ~/.mylog/mylog | awk '{print $4}' | sort -u | uniq -u) != "" ]]; then
-        cat ~/.mylog/mylog | awk '{print $4}' | sort -u | uniq -u
+	if [[ $(cat ${MYLOG} | awk '{print $4}' | sort -u | uniq -u) != "" ]]; then
+        cat ${MYLOG} | awk '{print $4}' | sort -u | uniq -u
         exit
     else
         echo "You have nothing in your log at the moment."
