@@ -16,14 +16,14 @@ When a new version is released, you can run **make update** to just install **my
 
 Or, you can do it manually as described below.
 
-1. Download script and place it in your path. I use ~/bin/
-2. Create a directory called ~/.mylog (mkdir ~/.mylog)
-3. Create a file called mylog (touch ~.mylog/mylog)
-4. Create symlinks for the other functions
-  1. ln -s ~/bin/mylog ~/bin/myview
-  2. ln -s ~/bin/mylog ~/bin/mysearch
-5. Protect your log
-  1. chmod 640 ~/.mylog
+# Download script and place it in your path. I use ~/bin/
+# Create a directory called ~/.config/mylog (mkdir ~/.config/mylog)
+# Create a file called mylog (touch ~/.config/mylog/mylog)
+# Create symlinks for the other functions
+## ln -s ~/bin/mylog ~/bin/myview
+## ln -s ~/bin/mylog ~/bin/mysearch
+# Protect your log
+## chmod 640 ~/.config/mylog
 
 
 **Changelog**
