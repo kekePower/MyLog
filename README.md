@@ -20,10 +20,10 @@ Or, you can do it manually as described below.
 2. Create a directory called ~/.config/mylog (mkdir ~/.config/mylog)
 3. Create a file called mylog (touch ~/.config/mylog/mylog)
 4. Create symlinks for the other functions
-..1. ln -s ~/bin/mylog ~/bin/myview
-..2. ln -s ~/bin/mylog ~/bin/mysearch
+⋅⋅1. ln -s ~/bin/mylog ~/bin/myview
+⋅⋅2. ln -s ~/bin/mylog ~/bin/mysearch
 5. Protect your log
-..1. chmod 640 ~/.config/mylog
+⋅⋅1. chmod 640 ~/.config/mylog
 
 
 **Changelog**
