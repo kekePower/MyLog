@@ -47,6 +47,7 @@ Or, you can do it manually as described below.
       - Removed the Install instructions from the mylog file
 0.7.0 - Moved the logfile to ~/.config/mylog/mylog
       - Fixed a hardcoded setting
+      - Fixed colors in help. Easier to read.
 ```
 
 **Plans or hopes for the future**
