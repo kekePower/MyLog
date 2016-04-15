@@ -31,8 +31,8 @@ DATE=$( date "+%F %T" )
 if [[ ${1} == "-h" ]]; then
 	echo "\033[1;32mThis is a small logging script for one line notes that you'd like to keep for future reference."
 	echo "It's nothing fancy, but it does the job for me.$END"
-	echo "${0:t} v${VERSION}"
-	echo "Usage:"
+	echo "${W}${0:t} v${VERSION}"
+	echo "Usage:${E}"
 	echo "\t\033[1;32m${0:t} <Enter>"
 	echo "\t${0:t} -v (or myview) - View the changelog"
 	echo "\t${0:t} -s (or mysearch) - Search, case insensitive"
