@@ -9,6 +9,7 @@ system or events that you want to have on record.
 It's really simple, but it works.
 
 **How to install**
+
 1.
 You can copy the **mylog** shell script to, i.e. ~/bin/mylog, and make it executable **chmod 750 ~/bin/mylog**.
 Then just run the script. It will as if you want to run setup.
