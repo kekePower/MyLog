@@ -12,7 +12,9 @@ It's really simple, but it works.
 
 1.
 You can copy the **mylog** shell script to, i.e. ~/bin/mylog, and make it executable **chmod 750 ~/bin/mylog**.
-Then just run the script. It will as if you want to run setup.
+
+Then just run the script. It will ask if you want to run setup.
+
 Hit Return and the script creates the log-file and creates the symlinks neccessary.
 
 2.
