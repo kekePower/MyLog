@@ -9,11 +9,17 @@ system or events that you want to have on record.
 It's really simple, but it works.
 
 **How to install**
+1.
+You can copy the **mylog** shell script to, i.e. ~/bin/mylog, and make it executable **chmod 750 ~/bin/mylog**.
+Then just run the script. It will as if you want to run setup.
+Hit Return and the script creates the log-file and creates the symlinks neccessary.
 
+2.
 You will have to edit the Makefile and then run **make install**.
 
 When a new version is released, you can run **make update** to just install **mylog**.
 
+3.
 Or, you can do it manually as described below.
 
 1. Download script and place it in your path. I use ~/bin/
