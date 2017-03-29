@@ -25,4 +25,5 @@
 0.8.1 - Fixed the search for tags
       - Fixed the formatting for tags
       - mysearch is now more accurate
+      - Experimenting with using YAD. Only for showing tags at the moment
 ```

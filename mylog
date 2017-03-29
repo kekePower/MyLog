@@ -81,15 +81,21 @@ if [[ ${1} == "-tags" ]]; then
         TAGS=$(cat ${MYLOG} | awk '{print $4}' | sort -u | uniq -u)
 				echo ${TAGS} | while read MyTags
 					do
-						NUMTAGS=$(cat ${MYLOG} | grep -w " ${MyTags} " | wc -l)
-						echo "${MyTags}\t(${NUMTAGS})"
+						NUMTAGS=$(cat ${MYLOG} | grep -w " ${MyTags:u} " | wc -l)
+						echo "${MyTags}\t(${NUMTAGS})" >> /tmp/MyTags
 				done
-        exit
+				if [[ ! -f $(which yad) ]]; then
+					cat /tmp/MyTags
+				else
+					fc=$(cat /tmp/MyTags | yad --list --center --title="MyLog Tags" --column="List" --separator="" --width=400 --height=600 --button="gtk-close:10")
+        fi
+				rm -f /tmp/MyTags
+				exit
     else
         echo "You have nothing in your log at the moment."
         exit
     fi
-fi
+fi 
 
 echo "${W}Your log entry:${END}"
 read LOG
