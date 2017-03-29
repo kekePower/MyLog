@@ -1,6 +1,6 @@
 ## MyLog
 
-2015-2016 - Licensed under GPL, any version
+2015-2017 - Licensed under GPL, any version
 
 MyLog is a script written in the ZSH shell that I use to log one-liners about what I do in my life.
 It's just for fun, but this script can also be used to keep track of changes you've made to your
