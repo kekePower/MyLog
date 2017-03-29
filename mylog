@@ -25,8 +25,30 @@ END="\033[0m"
 
 # You don't have to edit anything beyond this line.
 #
-VERSION="0.7.0"
+VERSION="0.8.0"
 DATE=$( date "+%F %T" )
+
+if [[ ! -f ${MYLOG} ]]; then
+	echo "Do you want to set up MyLog? (Y/n)\c"
+	read setup
+
+	if [[ ${setup} == "" || ${setup} == "Y" || ${setup} == "y" ]]; then
+		echo "Creating the MyLog dir and file"
+		mkdir -p ${MYLOG:h}
+		touch ${MYLOG}
+
+		echo "Creating symlinks for myview and mysearch where you places mylog"
+		ln -s ${0} ${0:h}/myview
+		ln -s ${0} ${0:h}/mysearch
+
+		echo "${0:t} v${VERSION} successfully installed"
+		echo "${DATE} * INSTALLED * ${0:t} v${VERSION} successfully installed" > ${MYLOG}
+	else
+		echo "Aborting the installation of ${0:t} v${VERSION}"
+		exit
+	fi
+	exit
+fi
 
 if [[ ${1} == "-h" ]]; then
 	echo "\033[1;32mThis is a small logging script for one line notes that you'd like to keep for future reference."
