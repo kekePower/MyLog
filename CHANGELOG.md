@@ -21,4 +21,5 @@
       - Fixed a hardcoded setting
       - Fixed colors in help. Easier to read
       - Fixed a formatting bug in mysearch, awk print error
+0.8.0 - Created a setup within the mylog script
 ```
