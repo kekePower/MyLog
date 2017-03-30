@@ -30,4 +30,5 @@
       - Cleaned up just a tad in mylog
       - Updated the README.md file
       - Updated help information
+      - Updated the installer to chmod the log directory
 ```
