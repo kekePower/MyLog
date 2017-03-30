@@ -37,6 +37,7 @@ if [[ ! -f ${MYLOG} ]]; then
 		echo "Creating the MyLog dir and file"
 		mkdir -p ${MYLOG:h}
 		touch ${MYLOG}
+		chmod 640 ${MYLOG:h}
 
 		echo "Creating symlinks for myview and mysearch where you places mylog"
 		ln -s ${0} ${0:h}/myview
