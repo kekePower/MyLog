@@ -26,4 +26,7 @@
       - Fixed the formatting for tags
       - mysearch is now more accurate
       - Experimenting with using YAD. Only for showing tags at the moment
+0.8.2 - 2017-03-30
+      - Cleaned up just a tad in mylog
+      - Updated the README.md file
 ```
