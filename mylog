@@ -52,15 +52,15 @@ if [[ ! -f ${MYLOG} ]]; then
 fi
 
 if [[ ${1} == "-h" ]]; then
-	echo "\033[1;32mThis is a small logging script for one line notes that you'd like to keep for future reference."
-	echo "It's nothing fancy, but it does the job for me.$END"
-	echo "${W}${0:t} v${VERSION}"
-	echo "Usage:${E}"
+	echo "${W}${0:t} v${VERSION}\n"
+	echo "\033[1;32mThis is a small logging script for one line notes that you'd like to keep for\nfuture reference. It's nothing fancy, but it does the job for me.$END"
+	echo ""
+	echo "${W}Usage:${E}"
 	echo "\t\033[1;32m${0:t} <Enter>"
 	echo "\t${0:t} -v (or myview) - View the changelog"
 	echo "\t${0:t} -s (or mysearch) - Search, case insensitive"
-    echo "\t${0:t} -tags - This will show a list of tags you've used sorted alphabetically${END}"
-	echo "\n\033[1;33mScripted by Stig-Ørjan Smelror <smelror@gmail.com>$END"
+  echo "\t${0:t} -tags - This will show a list of tags you've used, sorted\n\t      alphabetically. If you have YAD installed, it will display a window${END}"
+	echo "\n\033[1;33mScripted by Stig-Ørjan Smelror <smelror@gmail.com>$END\n"
 	exit
 fi
 if [[ ${1} == "-v" || ${0:t} == "myview" ]]; then
