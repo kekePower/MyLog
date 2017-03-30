@@ -29,4 +29,5 @@
 0.8.2 - 2017-03-30
       - Cleaned up just a tad in mylog
       - Updated the README.md file
+      - Updated help information
 ```
