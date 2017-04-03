@@ -31,4 +31,6 @@
       - Updated the README.md file
       - Updated help information
       - Updated the installer to chmod the log directory
+0.8.3 - 2017-04-03
+      - Fixed permission issue on the log directory in the installer
 ```

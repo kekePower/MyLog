@@ -26,7 +26,7 @@ END="\033[0m"
 
 # You don't have to edit anything beyond this line.
 #
-VERSION="0.8.2"
+VERSION="0.8.3"
 DATE=$( date "+%F %T" )
 
 if [[ ! -f ${MYLOG} ]]; then
@@ -37,7 +37,7 @@ if [[ ! -f ${MYLOG} ]]; then
 		echo "Creating the MyLog dir and file"
 		mkdir -p ${MYLOG:h}
 		touch ${MYLOG}
-		chmod 640 ${MYLOG:h}
+		chmod 740 ${MYLOG:h}
 
 		echo "Creating symlinks for myview and mysearch where you places mylog"
 		ln -s ${0} ${0:h}/myview
