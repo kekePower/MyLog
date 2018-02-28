@@ -26,7 +26,7 @@ END="\033[0m"
 
 # You don't have to edit anything beyond this line.
 #
-VERSION="0.8.3"
+VERSION="0.8.4"
 DATE=$( date "+%F %T" )
 
 if [[ ! -f ${MYLOG} ]]; then
@@ -40,8 +40,12 @@ if [[ ! -f ${MYLOG} ]]; then
 		chmod 740 ${MYLOG:h}
 
 		echo "Creating symlinks for myview and mysearch where you places mylog"
-		ln -s ${0} ${0:h}/myview
-		ln -s ${0} ${0:h}/mysearch
+		if [[ ! -a ${0:h}/myview ]]; then
+			ln -s ${0} ${0:h}/myview
+		fi
+		if [[ ! -a ${0:h}/mysearch ]]; then
+			ln -s ${0} ${0:h}/mysearch
+		fi
 
 		echo "${0:t} v${VERSION} successfully installed"
 		echo "${DATE} * INSTALLED * ${0:t} v${VERSION} successfully installed" > ${MYLOG}

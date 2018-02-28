@@ -4,28 +4,29 @@
 NAME    = mylog
 PREFIX  = ~/bin
 INSTALL = $(PREFIX)/$(NAME)
-LOGDIR  = ~/.config/$(NAME)
+LOGDIR  = ~/.local/share/$(NAME)
 LOGFILE = $(LOGDIR)/$(NAME)
 
-install:
-	@-printf 'Installing MyLog as $(INSTALL)'
-	@-cat mylog | grep ^MYLOG | sed -e '1,/MYLOG/s/MYLOG/MYLOG\=$(LOGFILE:q)\ \#\ /' > /tmp/mylog
-	@-install -c /tmp/mylog $(INSTALL)
+install: mylog
+	@-printf 'Installing MyLog as $(INSTALL)\n'
+	@-cp mylog /tmp/mylog
+	@-sed -i "/MYLOG=/c\MYLOG=$(LOGFILE)" /tmp/mylog
+	@-install -cDm 750 /tmp/mylog $(INSTALL)
 	@-rm -f /tmp/mylog
 	@-printf 'Creating the symlinks\n'
 	@-ln -sf $(INSTALL) $(PREFIX)/myview
-	@-ln -sf $(INSTALL)/mylog $(PREFIX)/mysearch
-	@-printf 'Creating the logdir and logfile'
-	@-mkdir $(LOGDIR)
+	@-ln -sf $(INSTALL) $(PREFIX)/mysearch
+	@-printf 'Creating the log file\n'
+	@-mkdir -pm 764 $(LOGDIR)
 	@-touch $(LOGFILE)
-	@-chmod 640 $(LOGDIR)
 	@-printf '\nYou are now ready to use MyLog. Please enjoy.\n'
 	@-exit 0
 
 
 update:
 	@-printf 'Updating MyLog as $(INSTALL)\n'
-	@-cat mylog | grep ^MYLOG | sed -e '1,/MYLOG/s/MYLOG/MYLOG\=$(LOGFILE:q)\ \#\ /' > /tmp/mylog
+	@-cp mylog /tmp/mylog
+	@-sed -i "/MYLOG=/c\MYLOG=$(LOGFILE)" /tmp/mylog
 	@-install -c /tmp/mylog $(INSTALL)
 	@-rm -f /tmp/mylog
 	@-exit 0

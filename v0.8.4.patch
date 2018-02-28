@@ -1,0 +1,72 @@
+diff --git a/Makefile b/Makefile
+index 00c6ada..b59a0d5 100644
+--- a/Makefile
++++ b/Makefile
+@@ -4,28 +4,29 @@
+ NAME    = mylog
+ PREFIX  = ~/bin
+ INSTALL = $(PREFIX)/$(NAME)
+-LOGDIR  = ~/.config/$(NAME)
++LOGDIR  = ~/.local/share/$(NAME)
+ LOGFILE = $(LOGDIR)/$(NAME)
+ 
+-install:
+-	@-printf 'Installing MyLog as $(INSTALL)'
+-	@-cat mylog | grep ^MYLOG | sed -e '1,/MYLOG/s/MYLOG/MYLOG\=$(LOGFILE:q)\ \#\ /' > /tmp/mylog
+-	@-install -c /tmp/mylog $(INSTALL)
++install: mylog
++	@-printf 'Installing MyLog as $(INSTALL)\n'
++	@-cp mylog /tmp/mylog
++	@-sed -i "/MYLOG=/c\MYLOG=$(LOGFILE)" /tmp/mylog
++	@-install -cDm 750 /tmp/mylog $(INSTALL)
+ 	@-rm -f /tmp/mylog
+ 	@-printf 'Creating the symlinks\n'
+ 	@-ln -sf $(INSTALL) $(PREFIX)/myview
+-	@-ln -sf $(INSTALL)/mylog $(PREFIX)/mysearch
+-	@-printf 'Creating the logdir and logfile'
+-	@-mkdir $(LOGDIR)
++	@-ln -sf $(INSTALL) $(PREFIX)/mysearch
++	@-printf 'Creating the log file\n'
++	@-mkdir -pm 764 $(LOGDIR)
+ 	@-touch $(LOGFILE)
+-	@-chmod 640 $(LOGDIR)
+ 	@-printf '\nYou are now ready to use MyLog. Please enjoy.\n'
+ 	@-exit 0
+ 
+ 
+ update:
+ 	@-printf 'Updating MyLog as $(INSTALL)\n'
+-	@-cat mylog | grep ^MYLOG | sed -e '1,/MYLOG/s/MYLOG/MYLOG\=$(LOGFILE:q)\ \#\ /' > /tmp/mylog
++	@-cp mylog /tmp/mylog
++	@-sed -i "/MYLOG=/c\MYLOG=$(LOGFILE)" /tmp/mylog
+ 	@-install -c /tmp/mylog $(INSTALL)
+ 	@-rm -f /tmp/mylog
+ 	@-exit 0
+diff --git a/mylog b/mylog
+index 28c27f3..f7808ae 100755
+--- a/mylog
++++ b/mylog
+@@ -26,7 +26,7 @@ END="\033[0m"
+ 
+ # You don't have to edit anything beyond this line.
+ #
+-VERSION="0.8.3"
++VERSION="0.8.4"
+ DATE=$( date "+%F %T" )
+ 
+ if [[ ! -f ${MYLOG} ]]; then
+@@ -40,8 +40,12 @@ if [[ ! -f ${MYLOG} ]]; then
+ 		chmod 740 ${MYLOG:h}
+ 
+ 		echo "Creating symlinks for myview and mysearch where you places mylog"
+-		ln -s ${0} ${0:h}/myview
+-		ln -s ${0} ${0:h}/mysearch
++		if [[ ! -a ${0:h}/myview ]]; then
++			ln -s ${0} ${0:h}/myview
++		fi
++		if [[ ! -a ${0:h}/mysearch ]]; then
++			ln -s ${0} ${0:h}/mysearch
++		fi
+ 
+ 		echo "${0:t} v${VERSION} successfully installed"
+ 		echo "${DATE} * INSTALLED * ${0:t} v${VERSION} successfully installed" > ${MYLOG}
